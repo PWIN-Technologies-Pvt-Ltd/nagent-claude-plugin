@@ -38,7 +38,11 @@ This plugin adds an MCP server called `nagent` that points at
 ## Step 2. Show what they can do from Claude Code
 
 From the `nagent_list_agents` result, show a short table: agent key, name,
-autonomy level. Then say, in two or three lines:
+autonomy level. With more than 15 agents, do not list them all: give the
+count by autonomy level and a table of at most 10 (switched-on agents with
+the highest autonomy first), and say they can name any other. If the result
+is too large to read whole, read it in parts or filter it, and say how many
+agents there are. Then say, in two or three lines:
 
 - Each agent is a tool named `<agent key>_run`. Ask in plain words, for
   example "ask nora to research retail-1.example", or use `/nagent:run`.
