@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "nagent",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Connect to your Nagent workspace over MCP, run your Nagent agents, and wire the Nagent API, SDKs and webhooks into your own code.",
   "author": {
     "name": "Nagent",
@@ -16,7 +16,7 @@
       "onboardingSkill": "./skills/nagent-setup/SKILL.md",
       "interface": {
         "displayName": "Nagent",
-        "shortDescription": "Run your Nagent agents and build with the Nagent API",
+        "shortDescription": "Run your Nagent agents",
         "longDescription": "Run the AI agents in your Nagent workspace from chat or from your editor, follow their runs, and see what waits for a person's approval. Nagent also helps you call your agents from your own code with the Nagent REST API, the TypeScript and Python SDKs, and signed webhooks. Nagent only reaches the agents and data your connected workspace account allows.",
         "developerName": "Nagent",
         "category": "Productivity",
