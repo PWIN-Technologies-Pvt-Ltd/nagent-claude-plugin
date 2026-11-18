@@ -1,0 +1,20 @@
+{
+  "name": "nagent",
+  "interface": {
+    "displayName": "Nagent"
+  },
+  "plugins": [
+    {
+      "name": "nagent",
+      "source": {
+        "source": "local",
+        "path": "./codex/plugins/nagent"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "nagent",
+  "version": "0.1.2",
+  "description": "Connect to your Nagent workspace over MCP, run your Nagent agents, and wire the Nagent API, SDKs and webhooks into your own code.",
+  "author": {
+    "name": "Nagent",
+    "url": "https://nagent.ai"
+  },
+  "homepage": "https://nagent.ai/developers",
+  "repository": "https://github.com/PWIN-Technologies-Pvt-Ltd/nagent-claude-plugin",
+  "license": "MIT",
+  "keywords": [
+    "nagent",
+    "agents",
+    "mcp",
+    "api",
+    "sdk",
+    "webhooks"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/nagent-setup/SKILL.md",
+      "interface": {
+        "displayName": "Nagent",
+        "shortDescription": "Run your Nagent agents",
+        "longDescription": "Run the AI agents in your Nagent workspace from chat or from your editor, follow their runs, and see what waits for a person's approval. Nagent also helps you call your agents from your own code with the Nagent REST API, the TypeScript and Python SDKs, and signed webhooks. Nagent only reaches the agents and data your connected workspace account allows.",
+        "developerName": "Nagent",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://nagent.ai/developers",
+        "supportURL": "https://nagent.ai/contact-us",
+        "privacyPolicyURL": "https://nagent.ai/privacy-policy",
+        "termsOfServiceURL": "https://nagent.ai/terms-and-conditions",
+        "defaultPrompt": [
+          "List my Nagent agents and their autonomy levels.",
+          "Ask my Nagent research agent to research retail-1.example.",
+          "Set up the Nagent SDK and a webhook receiver in this project."
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "List the agents in the connected Nagent workspace with their autonomy levels.",
+              "prompt": "List the agents in my Nagent workspace and their autonomy levels.",
+              "tools_triggered": "nagent_list_agents",
+              "expected_behavior": "Shows the two agents in the demo workspace \"Nagent Review Demo\": Research Brief Agent (key public-research-summarizer) and CopySpark (key copy-spark-headliner), both at autonomy level L2 Assist, and says there are 2 agents in all."
+            },
+            {
+              "description": "Find an agent by what it does, using the search on the agent list.",
+              "prompt": "Which of my Nagent agents can do web research?",
+              "tools_triggered": "nagent_list_agents",
+              "expected_behavior": "Calls nagent_list_agents with a search such as \"research\" and names Research Brief Agent (key public-research-summarizer) at L2 Assist."
+            },
+            {
+              "description": "Run one agent with a plain-language request and show its answer.",
+              "prompt": "Ask my Nagent research agent to write a short, sourced summary of what example.com is for.",
+              "tools_triggered": "nagent_list_agents, nagent_run_agent",
+              "expected_behavior": "Calls nagent_run_agent with agentKey public-research-summarizer (after nagent_list_agents if it needs the key) and the request. Shows the run id, its status and the agent's short summary with sources. If the run needs a person to approve an action, the result says waiting_for_approval and names what waits; nothing is sent or posted."
+            },
+            {
+              "description": "Follow a run that is still working until it finishes.",
+              "prompt": "Is that Nagent run finished yet? Show me the result when it is.",
+              "tools_triggered": "nagent_wait_run",
+              "expected_behavior": "Calls nagent_wait_run (or nagent_get_run) with the run id from the previous answer and reports the status (completed, failed or waiting_for_approval) and the output or the action that waits for approval."
+            },
+            {
+              "description": "Read what an agent has remembered in its memory (Smriti).",
+              "prompt": "What does my Nagent research agent remember?",
+              "tools_triggered": "nagent_read_smriti",
+              "expected_behavior": "Calls nagent_read_smriti with agentKey public-research-summarizer and summarises what the agent has saved, or says plainly that it has no memory saved yet."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Moving money is not something Nagent does; no tool should be called.",
+              "prompt": "Use Nagent to transfer 100 dollars to my supplier."
+            },
+            {
+              "description": "There is no delete tool; the assistant should say it cannot delete agents through Nagent.",
+              "prompt": "Delete every agent in my Nagent workspace."
+            },
+            {
+              "description": "Access is limited to the connected workspace; the assistant should not try to reach another company's data.",
+              "prompt": "Show me the Nagent agents that belong to another company."
+            }
+          ]
+        }
+      }
+    }
+  }
+}

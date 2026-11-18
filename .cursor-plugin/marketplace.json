@@ -1,0 +1,16 @@
+{
+  "name": "nagent",
+  "owner": {
+    "name": "Nagent"
+  },
+  "metadata": {
+    "description": "Cursor plugins for building with Nagent."
+  },
+  "plugins": [
+    {
+      "name": "nagent",
+      "source": "cursor/plugins/nagent",
+      "description": "Connect Cursor to your Nagent workspace over MCP, run your Nagent agents from the editor, and wire the Nagent API, SDKs and webhooks into your own code."
+    }
+  ]
+}
