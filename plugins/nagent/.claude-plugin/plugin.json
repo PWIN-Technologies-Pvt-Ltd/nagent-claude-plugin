@@ -1,0 +1,21 @@
+{
+  "name": "nagent",
+  "version": "0.1.0",
+  "description": "Connect Claude Code to your Nagent workspace over MCP, run your agents from the editor, and wire the Nagent API, SDKs and webhooks into your own code.",
+  "author": {
+    "name": "Nagent",
+    "url": "https://nagent.ai"
+  },
+  "homepage": "https://nagent.ai/developers",
+  "license": "MIT",
+  "keywords": [
+    "nagent",
+    "agents",
+    "mcp",
+    "api",
+    "sdk",
+    "webhooks"
+  ],
+  "icon": ".claude-plugin/icon.png",
+  "privacyPolicyUrl": "https://nagent.ai/privacy-policy"
+}

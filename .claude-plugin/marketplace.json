@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "nagent",
+  "owner": {
+    "name": "Nagent",
+    "url": "https://nagent.ai"
+  },
+  "metadata": {
+    "description": "Claude Code plugins for building with Nagent."
+  },
+  "plugins": [
+    {
+      "name": "nagent",
+      "source": "./plugins/nagent",
+      "description": "Connect Claude Code to your Nagent workspace over MCP, run your agents from the editor, and wire the Nagent API, SDKs and webhooks into your own code.",
+      "category": "development",
+      "homepage": "https://nagent.ai/developers"
+    }
+  ]
+}
