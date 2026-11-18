@@ -1,10 +1,27 @@
-# Nagent for Claude Code
+# Nagent for Claude Code and other AI apps
 
-Connect Claude Code to your [Nagent](https://nagent.ai) workspace in about a
-minute. Run your agents from the editor, and let Claude wire the Nagent API,
-SDKs and webhooks into your own code.
+Connect your AI app to your [Nagent](https://nagent.ai) workspace in about a
+minute. Run your agents from the editor or a chat, and let the assistant
+wire the Nagent API, SDKs and webhooks into your own code.
 
-## Install
+Every app connects to the same Nagent MCP server,
+`https://nagent.ai/api/mcp/nagent`, and signs in with OAuth in your browser,
+so there is no key to paste.
+
+## Use Nagent in
+
+| App | What you get | Setup |
+| --- | --- | --- |
+| Claude Code | Plugin: MCP server, `/nagent:setup`, `/nagent:run`, `nagent-api` skill | [Below](#install-in-claude-code) |
+| Claude chat (claude.ai and the desktop app) | Custom connector | [claude/](claude/README.md) |
+| OpenAI Codex (CLI, IDE extension, ChatGPT desktop app) | Plugin: MCP server, `nagent-setup`, `nagent-run` and `nagent-api` skills | [codex/](codex/README.md) |
+| Cursor | "Add to Cursor" link, plugin with `/nagent-setup`, `/nagent-run` and a `nagent-api` rule | [cursor/](cursor/README.md) |
+| ChatGPT | Custom MCP server now; directory listing to follow | [chatgpt/](chatgpt/README.md) |
+
+Directory submissions: [ChatGPT and Codex](chatgpt/SUBMISSION.md),
+[Claude](claude/SUBMISSION.md).
+
+## Install in Claude Code
 
 ```text
 /plugin marketplace add PWIN-Technologies-Pvt-Ltd/nagent-claude-plugin
@@ -47,6 +64,16 @@ server by hand:
 claude mcp add --transport http nagent https://nagent.ai/api/mcp/nagent \
   --header "Authorization: Bearer $NAGENT_API_KEY"
 ```
+
+## One source of truth
+
+The `nagent-api` skill lives in `plugins/nagent/skills/nagent-api/`. The
+setup and run steps for Codex and Cursor live in `shared/`. The Codex
+skills, the Cursor rule and commands, and the icon and licence copies are
+generated from those by `python3 scripts/sync-shared.py`; run it with
+`--check` to confirm nothing is out of date. The Claude Code commands in
+`plugins/nagent/commands/` are the Claude-specific version of the same
+steps: change both when the steps change.
 
 ## Links
 

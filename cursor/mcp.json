@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "nagent": {
+      "url": "https://nagent.ai/api/mcp/nagent"
+    }
+  }
+}

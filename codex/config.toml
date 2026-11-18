@@ -1,0 +1,18 @@
+# Nagent MCP server for Codex (CLI and IDE extension).
+#
+# Paste this into ~/.codex/config.toml for every project, or into
+# .codex/config.toml in a trusted project. Then sign in once:
+#
+#   codex mcp login nagent
+#
+# No key goes in this file: Codex keeps the OAuth tokens itself.
+
+[mcp_servers.nagent]
+url = "https://nagent.ai/api/mcp/nagent"
+
+# Agent runs and nagent_wait_run can take longer than the 60 second default.
+tool_timeout_sec = 300
+
+# Optional: ask for fewer permissions at sign-in. Without this, Codex asks
+# for every scope Nagent advertises.
+# scopes = ["agents:read", "agents:run", "runs:read"]

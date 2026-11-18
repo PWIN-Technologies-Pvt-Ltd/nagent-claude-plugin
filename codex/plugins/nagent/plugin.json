@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "nagent",
+  "version": "0.1.0",
+  "description": "Connect to your Nagent workspace over MCP, run your Nagent agents, and wire the Nagent API, SDKs and webhooks into your own code.",
+  "author": {
+    "name": "Nagent",
+    "url": "https://nagent.ai"
+  },
+  "homepage": "https://nagent.ai/developers",
+  "repository": "https://github.com/PWIN-Technologies-Pvt-Ltd/nagent-claude-plugin",
+  "license": "MIT",
+  "keywords": ["nagent", "agents", "mcp", "api", "sdk", "webhooks"],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/nagent-setup/SKILL.md",
+      "interface": {
+        "displayName": "Nagent",
+        "shortDescription": "Run your Nagent agents and build with the Nagent API",
+        "longDescription": "Run the AI agents in your Nagent workspace from chat or from your editor, follow their runs, and see what waits for a person's approval. Nagent also helps you call your agents from your own code with the Nagent REST API, the TypeScript and Python SDKs, and signed webhooks. Nagent only reaches the agents and data your connected workspace account allows.",
+        "developerName": "Nagent",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "websiteURL": "https://nagent.ai/developers",
+        "supportURL": "https://nagent.ai/contact-us",
+        "privacyPolicyURL": "https://nagent.ai/privacy-policy",
+        "termsOfServiceURL": "https://nagent.ai/terms-and-conditions",
+        "defaultPrompt": [
+          "List my Nagent agents and their autonomy levels.",
+          "Ask my Nagent research agent to research retail-1.example.",
+          "Set up the Nagent SDK and a webhook receiver in this project."
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      }
+    }
+  }
+}

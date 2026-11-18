@@ -1,0 +1,11 @@
+interface:
+  display_name: "Run a Nagent agent"
+  short_description: "Run one of your Nagent agents and show the result"
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "nagent"
+      description: "Nagent MCP server (OAuth sign-in)"
+      transport: "streamable_http"
+      url: "https://nagent.ai/api/mcp/nagent"
