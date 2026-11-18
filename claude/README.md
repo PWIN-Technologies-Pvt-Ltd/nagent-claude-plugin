@@ -86,7 +86,6 @@ the directory under **Customize**, **Connectors** instead of adding it by
 URL. The
 Nagent plugin in this repository (connector, skills and commands) can also
 be listed in the Claude plugin directory for claude.ai and Cowork.
-[`SUBMISSION.md`](SUBMISSION.md) tracks what both listings need.
 
 Docs: [Add a connector that isn't in the directory](https://claude.com/docs/connectors/custom/add-unlisted),
 [Authentication for connectors](https://claude.com/docs/connectors/building/authentication).

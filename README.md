@@ -18,9 +18,6 @@ so there is no key to paste.
 | Cursor | "Add to Cursor" link, plugin with `/nagent-setup`, `/nagent-run` and a `nagent-api` rule | [cursor/](cursor/README.md) |
 | ChatGPT | Custom MCP server now; directory listing to follow | [chatgpt/](chatgpt/README.md) |
 
-Directory submissions: [ChatGPT and Codex](chatgpt/SUBMISSION.md),
-[Claude](claude/SUBMISSION.md).
-
 ## Install in Claude Code
 
 ```text

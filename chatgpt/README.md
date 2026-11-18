@@ -68,7 +68,6 @@ A workspace on its own domain uses its own host. Use the same steps with
 Once Nagent is published in the plugin directory shared by ChatGPT and
 Codex, search for **Nagent** under [Plugins](https://chatgpt.com/plugins),
 install it and connect. The directory listing replaces the custom server.
-[`SUBMISSION.md`](SUBMISSION.md) tracks what that listing needs.
 
 Docs: [Add custom MCP server](https://developers.openai.com/api/docs/guides/custom-mcp-server),
 [Connect and test your plugin](https://developers.openai.com/plugins/deploy/connect-chatgpt).
