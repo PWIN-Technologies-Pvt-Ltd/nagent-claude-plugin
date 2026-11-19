@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "nagent",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Connect to your Nagent workspace over MCP, run your Nagent agents, and wire the Nagent API, SDKs and webhooks into your own code.",
   "author": {
     "name": "Nagent",
@@ -50,13 +50,13 @@
               "description": "List the agents in the connected Nagent workspace with their autonomy levels.",
               "prompt": "List the agents in my Nagent workspace and their autonomy levels.",
               "tools_triggered": "nagent_list_agents",
-              "expected_behavior": "Shows the two agents in the demo workspace \"Nagent Review Demo\": Research Brief Agent (key public-research-summarizer) and CopySpark (key copy-spark-headliner), both at autonomy level L2 Assist, and says there are 2 agents in all."
+              "expected_behavior": "Lists the agents in the demo workspace \"Nagent Review Demo\" (about 27, most of them search-visibility and blog agents) with each agent key, name and autonomy level, including Research Brief Agent (key public-research-summarizer) and CopySpark (key copy-spark-headliner), and says how many agents there are in all."
             },
             {
               "description": "Find an agent by what it does, using the search on the agent list.",
               "prompt": "Which of my Nagent agents can do web research?",
               "tools_triggered": "nagent_list_agents",
-              "expected_behavior": "Calls nagent_list_agents with a search such as \"research\" and names Research Brief Agent (key public-research-summarizer) at L2 Assist."
+              "expected_behavior": "Calls nagent_list_agents with a search such as \"research\" and names Research Brief Agent (key public-research-summarizer, L2 Assist) among the matching agents."
             },
             {
               "description": "Run one agent with a plain-language request and show its answer.",
